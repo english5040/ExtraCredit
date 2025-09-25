@@ -3138,6 +3138,11 @@ local function reset_fish_rank()
 end
 
 mod.reset_game_globals = function(run_start)
+    if run_start then 
+        G.GAME.current_round.tuxedo_card.suit = nil
+        G.GAME.current_round.farmer_card.suit = nil
+        G.GAME.current_round.fish_rank.rank = nil
+    end
 	reset_tuxedo_card()
 	reset_farmer_card()
 	reset_fish_rank()

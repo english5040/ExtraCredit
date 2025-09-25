@@ -3031,7 +3031,8 @@ SMODS.Back{ --Archeology Deck
 	pos = { x = 1, y = 0 },
 	atlas = "ECother",
   apply = function(self, back)
-    ease_ante(-1)
+    G.GAME.round_resets.ante = G.GAME.round_resets.ante - 1
+    G.GAME.round_resets.ante_disp = number_format(G.GAME.round_resets.ante)
     G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
     G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante - 1
     G.GAME.starting_params.hand_size = G.GAME.starting_params.hand_size - 1
